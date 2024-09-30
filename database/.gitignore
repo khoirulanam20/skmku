@@ -1,1 +1,18 @@
-*.sqlite*
+# Ignore resources folder
+/resource/
+
+# Ignore vendor folder
+/vendor/
+
+# Ignore app folder
+/app/
+
+# Ignore .env file
+.env
+
+# Optional: Ignore environment-specific configuration
+.env.*
+
+# Optional: Ignore IDE specific files (if needed)
+.idea/
+.vscode/

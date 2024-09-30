@@ -2,13 +2,10 @@
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
-
-    KecamatanController,
-    KelurahanController,
-    WilayahController,
     LoginController,
     DashboardSuperadminController,
-    TimController,
+    MasterDosenController,
+    MasterMahasiswaController,
 };
 
 Route::get('/run-admin', function () {
@@ -44,20 +41,20 @@ Route::get('/dashboard', [DashboardSuperadminController::class, 'index'])->name(
 // ADMIN
 Route::group(['middleware' => ['role:admin']], function () {
 
+    Route::get('/master-mahasiswa', [MasterMahasiswaController::class, 'index'])->name('mahasiswa.index');
+    Route::get('/master-mahasiswa/create', [MasterMahasiswaController::class, 'create'])->name('mahasiswa.create');
+    Route::post('/master-mahasiswa/store', [MasterMahasiswaController::class, 'store'])->name('mahasiswa.store');
+    Route::get('/master-mahasiswa/edit/{id}', [MasterMahasiswaController::class, 'edit'])->name('mahasiswa.edit');
+    Route::put('/master-mahasiswa/update/{id}', [MasterMahasiswaController::class, 'update'])->name('mahasiswa.update');
+    Route::delete('/master-mahasiswa/delete/{id}', [MasterMahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
+    
+    Route::get('/master-dosen', [MasterDosenController::class, 'index'])->name('dosen.index');
+    Route::get('/master-dosen/create', [MasterDosenController::class, 'create'])->name('dosen.create');
+    Route::post('/master-dosen/store', [MasterDosenController::class, 'store'])->name('dosen.store');
+    Route::get('/master-dosen/edit/{id}', [MasterDosenController::class, 'edit'])->name('dosen.edit');
+    Route::put('/master-dosen/update/{id}', [MasterDosenController::class, 'update'])->name('dosen.update');
+    Route::delete('/master-dosen/delete/{id}', [MasterDosenController::class, 'destroy'])->name('dosen.destroy');
 
-
-
-Route::get('/tim', [TimController::class, 'index'])->name('tim.index');
-Route::get('/tim/create', [TimController::class, 'create'])->name('tim.create');
-Route::post('/tim-store', [TimController::class, 'store'])->name('tim.store');
-Route::get('/tim/{id}/edit', [TimController::class, 'edit'])->name('tim.edit');
-Route::put('/tim/{id}', [TimController::class, 'update'])->name('tim.update');
-Route::delete('/tim/{id}', [TimController::class, 'destroy'])->name('tim.destroy');
-
-Route::get('/save-kecamatan', [KecamatanController::class, 'storeKecamatanData']);
-Route::get('/save-kelurahan', [KelurahanController::class, 'storeKelurahanData']);
-Route::get('/wilayah', [WilayahController::class, 'index'])->name('wilayah.index');
-Route::post('/wilayah/delete-all', [WilayahController::class, 'deleteAll'])->name('wilayah.deleteAll');
 
 
 });
