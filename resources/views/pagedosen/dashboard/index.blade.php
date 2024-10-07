@@ -9,7 +9,7 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div>
-                                    <p class="mb-0 text-secondary">DASHBOARD ADMIN/VERIF</p>
+                                    <p class="mb-0 text-secondary">DASHBOARD DOSEN</p>
                                     <h4 class="my-1 text-info">33 LAPORAN</h4>
                                     <p class="mb-0 font-13"></p>
                                 </div>

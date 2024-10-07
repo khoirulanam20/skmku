@@ -27,29 +27,35 @@ class LoginController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function login(Request $request)
-{
-    $credentials = $request->only('username', 'password');
+    {
+        $credentials = $request->only('username', 'password');
 
-    if (Auth::attempt($credentials)) {
-        $user = Auth::user();
-
-        // Check role and redirect accordingly
-        if ($user->role == 'admin') {
-            Alert::success('Login Successful', 'Welcome back, Admin!');
-            return redirect()->route('admin.dashboard');
-
-        } else {
-            // Handle other roles (fallback)
-            Auth::logout();
-            Alert::error('Login Failed', 'You are not authorized to access this area.');
-            return redirect('/login');
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+        
+            // Cek role dan redirect sesuai role
+            if ($user->role == 'admin') {
+                Alert::success('Login Successful', 'Welcome back, Admin!');
+                return redirect()->route('admin.dashboard');
+            } elseif ($user->role == 'mahasiswa') {
+                Alert::success('Login Successful', 'Welcome back, Mahasiswa!');
+                return redirect()->route('admin.dashboard');
+            } elseif ($user->role == 'dosen') {
+                Alert::success('Login Successful', 'Welcome back, Dosen!');
+                return redirect()->route('admin.dashboard');
+            } else {
+                // Logout jika peran tidak sesuai
+                Auth::logout();
+                Alert::error('Login Failed', 'You are not authorized to access this area.');
+                return redirect('/login');
+            }
         }
-    }
+        
 
-    // Authentication failed
-    Alert::error('Login Failed', 'The provided credentials do not match our records.');
-    return back();
-}
+        // Authentication failed
+        Alert::error('Login Failed', 'The provided credentials do not match our records.');
+        return back();
+    }
 
 
     /**
