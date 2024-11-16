@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('nim');
-            $table->string('prodi');
-            $table->string('fakultas');
             $table->string('alamat');
             $table->string('telepon');
             $table->foreignId('user_id');

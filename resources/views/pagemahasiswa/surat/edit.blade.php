@@ -70,13 +70,17 @@
                                         name="data_diperlukan_jika_ditujukan_ke_dinkes" rows="4">{{ $pendaftaransurat->data_diperlukan_jika_ditujukan_ke_dinkes }}</textarea>
                                 </div>
 
-
                                 <div class="col-md-6">
                                     <label for="surat">Jenis Surat</label>
-                                    <select name="surat" id="surat" class="form-control" required>
+                                    <select name="surat" id="surat" class="form-control" required
+                                        onchange="handleSuratChange(this)">
                                         <option value="">Pilih Surat</option>
-                                        <option value="Surat Penelitian" {{ $pendaftaransurat->surat == 'Surat Penelitian' ? 'selected' : '' }}>Surat Penelitian</option>
-                                        <option value="Surat Studi Pendahuluan" {{ $pendaftaransurat->surat == 'Surat Studi Pendahuluan' ? 'selected' : '' }}>Surat Studi Pendahuluan</option>
+                                        <option value="Surat Penelitian"
+                                            {{ $pendaftaransurat->surat == 'Surat Penelitian' ? 'selected' : '' }}>Surat
+                                            Penelitian</option>
+                                        <option value="Surat Studi Pendahuluan"
+                                            {{ $pendaftaransurat->surat == 'Surat Studi Pendahuluan' ? 'selected' : '' }}>
+                                            Surat Studi Pendahuluan</option>
                                     </select>
                                 </div>
 
@@ -85,24 +89,33 @@
                                     <select name="sub_surat" id="sub_surat" class="form-control" required
                                         onchange="handleSubSuratChange(this)">
                                         <option value="">Pilih Sub Surat</option>
-                                        <option value="Non Payung" {{ $pendaftaransurat->sub_surat == 'Non Payung' ? 'selected' : '' }}>Non Payung</option>
-                                        <option value="Payung" {{ $pendaftaransurat->sub_surat == 'Payung' ? 'selected' : '' }}>Payung</option>
+                                        <option value="Non Payung"
+                                            {{ $pendaftaransurat->sub_surat == 'Non Payung' ? 'selected' : '' }}>Non Payung
+                                        </option>
+                                        <option value="Payung"
+                                            {{ $pendaftaransurat->sub_surat == 'Payung' ? 'selected' : '' }}>Payung
+                                        </option>
                                     </select>
                                 </div>
 
                                 <div class="col-md-12">
-                                    <div id="payungFields" style="{{ $pendaftaransurat->sub_surat == 'Payung' ? '' : 'display:none;' }}">
+                                    <div id="payungFields"
+                                        style="{{ $pendaftaransurat->sub_surat == 'Payung' ? '' : 'display:none;' }}">
                                         <h4>Masukkan Nama Mahasiswa</h4>
                                         <div id="mahasiswaPayungContainer">
-                                            @foreach($pendaftaransurat->mahasiswa_payung as $index => $payung)
+                                            @foreach ($pendaftaransurat->mahasiswa_payung as $index => $payung)
                                                 <div class="form-row mb-3" id="mahasiswaPayung{{ $index }}">
                                                     <div class="col">
-                                                        <input type="text" name="mahasiswa_payung[{{ $index }}][nama]"
-                                                            class="form-control" placeholder="Nama Mahasiswa" value="{{ $payung['nama'] }}" required>
+                                                        <input type="text"
+                                                            name="mahasiswa_payung[{{ $index }}][nama]"
+                                                            class="form-control" placeholder="Nama Mahasiswa"
+                                                            value="{{ $payung['nama'] }}" required>
                                                     </div>
                                                     <div class="col">
-                                                        <input type="text" name="mahasiswa_payung[{{ $index }}][nim]"
-                                                            class="form-control" placeholder="NIM Mahasiswa" value="{{ $payung['nim'] }}" required>
+                                                        <input type="text"
+                                                            name="mahasiswa_payung[{{ $index }}][nim]"
+                                                            class="form-control" placeholder="NIM Mahasiswa"
+                                                            value="{{ $payung['nim'] }}" required>
                                                     </div>
                                                     <div class="col">
                                                         <button type="button" class="btn btn-danger"
@@ -116,6 +129,22 @@
                                             onclick="addMahasiswaField()">Tambah Mahasiswa</button>
                                     </div>
                                 </div>
+
+                                <!-- File upload fields -->
+                                <div class="col-md-6" id="beritaAcaraField" style="display: none;">
+                                    <label for="berita_acara" class="form-label">Berita Acara</label>
+                                    <input type="file" class="form-control" id="berita_acara" name="berita_acara">
+                                    <a href="{{ asset('dokumen/berita_acara/' . basename($pendaftaransurat->berita_acara)) }}"
+                                        target="_blank">Lihat Berita Acara</a><br>
+                                </div>
+                                <div class="col-md-6" id="ethicalClearanceField" style="display: none;">
+                                    <label for="ethical_clearance" class="form-label">Ethical Clearance</label>
+                                    <input type="file" class="form-control" id="ethical_clearance"
+                                        name="ethical_clearance">
+                                    <a href="{{ asset('dokumen/ethical_clearance/' . basename($pendaftaransurat->ethical_clearance)) }}"
+                                        target="_blank">Lihat Ethical Clearance</a><br>
+                                </div>
+                                <!-- File upload fields -->
 
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary px-5">Simpan</button>
@@ -147,32 +176,55 @@
             }
         }
 
-        // Function to add more mahasiswa payung fields dynamically
-        function addMahasiswaField() {
-            const container = document.getElementById('mahasiswaPayungContainer');
-            const newFieldId = `mahasiswaPayung${mahasiswaCount}`;
-            const newField = document.createElement('div');
-            newField.classList.add('form-row', 'mb-3');
-            newField.id = newFieldId;
-            newField.innerHTML = `
-        <div class="col">
-            <input type="text" name="mahasiswa_payung[${mahasiswaCount}][nama]" class="form-control" placeholder="Nama Mahasiswa" required>
-        </div>
-        <div class="col">
-            <input type="text" name="mahasiswa_payung[${mahasiswaCount}][nim]" class="form-control" placeholder="NIM Mahasiswa" required>
-        </div>
-        <div class="col">
-            <button type="button" class="btn btn-danger" onclick="removeMahasiswaField('${newFieldId}')">Hapus</button>
-        </div>
-    `;
-            container.appendChild(newField);
-            mahasiswaCount++;
+        // Function to handle surat change and show/hide file upload fields
+        function handleSuratChange(select) {
+            const beritaAcaraField = document.getElementById('beritaAcaraField');
+            const ethicalClearanceField = document.getElementById('ethicalClearanceField');
+
+            if (select.value === 'Surat Penelitian') {
+                beritaAcaraField.style.display = 'block';
+                ethicalClearanceField.style.display = 'block';
+            } else {
+                beritaAcaraField.style.display = 'none';
+                ethicalClearanceField.style.display = 'none';
+            }
         }
 
-        // Function to remove mahasiswa payung fields dynamically
+        // Function to add mahasiswa payung fields
+        function addMahasiswaField() {
+            mahasiswaCount++;
+            const container = document.getElementById('mahasiswaPayungContainer');
+            const newField = `
+                <div class="form-row mb-3" id="mahasiswaPayung${mahasiswaCount}">
+                    <div class="col">
+                        <input type="text" name="mahasiswa_payung[${mahasiswaCount}][nama]"
+                            class="form-control" placeholder="Nama Mahasiswa" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="mahasiswa_payung[${mahasiswaCount}][nim]"
+                            class="form-control" placeholder="NIM Mahasiswa" required>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn btn-danger"
+                            onclick="removeMahasiswaField('mahasiswaPayung${mahasiswaCount}')">Hapus</button>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', newField);
+        }
+
+        // Function to remove mahasiswa payung field
         function removeMahasiswaField(fieldId) {
             const field = document.getElementById(fieldId);
-            field.remove();
+            if (field) {
+                field.remove();
+            }
         }
+
+        // Initialize visibility of fields based on current values
+        window.onload = function() {
+            handleSuratChange(document.getElementById('surat'));
+            handleSubSuratChange(document.getElementById('sub_surat'));
+        };
     </script>
 @endsection

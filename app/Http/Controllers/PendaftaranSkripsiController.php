@@ -70,6 +70,7 @@ class PendaftaranSkripsiController extends Controller
             'tempat' => 'nullable',
             'tanggal' => 'nullable',
             'waktu' => 'nullable',
+            'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
@@ -129,6 +130,7 @@ class PendaftaranSkripsiController extends Controller
         $pendaftaranSkripsi->tempat = $request->tempat;
         $pendaftaranSkripsi->tanggal = $request->tanggal;
         $pendaftaranSkripsi->waktu = $request->waktu;
+        $pendaftaranSkripsi->selesai = $request->selesai;
         $pendaftaranSkripsi->link_spredsheet = $request->link_spredsheet;
         $pendaftaranSkripsi->komentar = $request->komentar;
         $pendaftaranSkripsi->status = 'pending'; // Default to pending
@@ -180,6 +182,7 @@ class PendaftaranSkripsiController extends Controller
             'tempat' => 'nullable',
             'tanggal' => 'nullable',
             'waktu' => 'nullable',
+            'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
@@ -231,6 +234,7 @@ class PendaftaranSkripsiController extends Controller
             'tempat' => $request->tempat,
             'tanggal' => $request->tanggal,
             'waktu' => $request->waktu,
+            'selesai' => $request->selesai,
             'link_spredsheet' => $request->link_spredsheet,
             'komentar' => $request->komentar,
             'status' => 'pending',

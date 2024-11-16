@@ -11,8 +11,6 @@ class MasterMahasiswa extends Model
     protected $fillable = [
         'nama',
         'nim',
-        'prodi',
-        'fakultas',
         'alamat',
         'telepon',
         'user_id'

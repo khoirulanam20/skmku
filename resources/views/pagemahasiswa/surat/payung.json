@@ -2,7 +2,13 @@
     {
         "nim": "123",
         "nama": "nama 1",
-        "berita_acara": "dokumen/penelitianpayung/6703170650a80_PROPOSAL PENELITIAN FIVI ALEDIA2 PERBAIKAN.docx",
-        "ethical_clearance": "dokumen/penelitianpayung/6703170650a88_siakad.uniks.ac.id_index.php_m=77&p=cetak&idm=M000006885.pdf"
+        "berita_acara": "",
+        "ethical_clearance": ""
+    },
+    {
+        "nim": "12131",
+        "nama": "nama 2",
+        "berita_acara": "",
+        "ethical_clearance": ""
     }
 ]

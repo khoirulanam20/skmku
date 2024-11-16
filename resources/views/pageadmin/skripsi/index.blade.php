@@ -20,6 +20,7 @@
             <hr />
             <div class="card">
                 <div class="card-body">
+                    <a href="{{ route('exportskripsi.index') }}" class="btn btn-success mb-3"><i class='bx bxs-file-export ' ></i> EXPORT EXCEL</a>
                     <div class="table-responsive">
                         <table id="example2" class="table table-striped table-bordered">
                             <thead>
@@ -31,6 +32,9 @@
                                     <th>Dosen Pembimbing</th>
                                     <th>Dosen Penguji</th>
                                     <th>Dosen Ketua Penguji</th>
+                                    <th>Tempat</th>
+                                    <th>Waktu Mulai</th>
+                                    <th>Waktu Selesai</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -45,6 +49,9 @@
                                         <td>{{ $p->dosenpembimbing->nama }}</td>
                                         <td>{{ $p->dosenpenguji->nama }}</td>
                                         <td>{{ $p->dosenketuapenguji->nama }}</td>
+                                        <td>{{ $p->tempat }}</td>
+                                        <td>{{ $p->waktu }}</td>
+                                        <td>{{ $p->selesai }}</td>
                                         <td>
                                             @if ($p->status == 'pending')
                                                 <span class="badge bg-warning">Pending</span>
@@ -73,6 +80,9 @@
                                     <th>Dosen Pembimbing</th>
                                     <th>Dosen Penguji</th>
                                     <th>Dosen Ketua Penguji</th>
+                                    <th>Tempat</th>
+                                    <th>Waktu Mulai</th>
+                                    <th>Waktu Selesai</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>

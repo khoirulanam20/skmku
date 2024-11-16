@@ -35,15 +35,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="nim" class="form-label">NIM</label>
-                                <input type="number" class="form-control" id="nim" name="nim" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="prodi" class="form-label">Prodi</label>
-                                <input type="text" class="form-control" id="prodi" name="prodi" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="fakultas" class="form-label">Fakultas</label>
-                                <input type="text" class="form-control" id="fakultas" name="fakultas" required>
+                                <input type="text" class="form-control" id="nim" name="nim" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="telepon" class="form-label">No HP Aktif</label>

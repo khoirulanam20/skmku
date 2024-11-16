@@ -32,6 +32,7 @@ class PendaftaranSkripsi extends Model
         'tempat',
         'tanggal',
         'waktu',
+        'selesai',
         'link_spredsheet',
         'komentar',
         'status',

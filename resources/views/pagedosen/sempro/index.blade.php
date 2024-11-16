@@ -10,47 +10,49 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Pendaftaran Sempro</li>
+                            <li class="breadcrumb-item active" aria-current="page">Data Sempro</li>
                         </ol>
                     </nav>
                 </div>
             </div>
             <!--breadcrumb-->
-            <h6 class="mb-0 text-uppercase">Data Pendaftaran Sempro</h6>
+            <h6 class="mb-0 text-uppercase">Data Sempro</h6>
             <hr />
             <div class="card">
                 <div class="card-body">
-                    <a href="{{ route('pendaftaransempro.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
                     <div class="table-responsive">
                         <table id="example2" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
                                     <th>No</th>
+                                    <th>Nama Lengkap</th>
+                                    <th>NIM</th>
                                     <th>Judul Proposal</th>
-                                    <th>Dosen Pembimbing</th>
-                                    <th>Dosen Penguji</th>
-                                    <th>Dosen Advisor</th>
+                                    <th>Pembimbing</th>
+                                    <th>Penguji</th>
+                                    <th>Tanggal</th>
+                                    <th>Waktu Mulai</th>
+                                    <th>Waktu Selesai</th>
+                                    <th>Tempat</th>
+                                    <th>Nilai</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($pendaftaranSempros as $index => $p)
+                                @foreach ($dataSempro as $index => $p)
                                     <tr>
                                         <td>{{ $index + 1 }}</td>
+                                        <td>{{ $p->mahasiswa->nama }}</td>
+                                        <td>{{ $p->mahasiswa->nim }}</td>
                                         <td>{{ $p->judul_proposal }}</td>
-                                        <td>{{ $p->dosen->nama }}</td>
-                                        <td>{{ $p->dosen->nama }}</td>
-                                        <td>{{ $p->dosen->nama }}</td>
-                                        <td>
-                                            <a href="{{ route('pendaftaransempro.edit', $p->id) }}"
-                                                class="btn btn-sm btn-warning">Edit</a>
-                                            <form action="{{ route('pendaftaransempro.destroy', $p->id) }}" method="POST"
-                                                style="display:inline;" class="delete-form">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
-                                            </form>
-                                        </td>
+                                        <td>{{ $p->dosenpembimbing->nama }}</td>
+                                        <td>{{ $p->dosenpenguji->nama }}</td>
+                                        <td>{{ $p->tanggal }}</td>
+                                        <td>{{ $p->waktu }}</td>
+                                        <td>{{ $p->selesai }}</td>
+                                        <td>{{ $p->tempat }}</td>
+                                        <td><a href="{{ $p->link_spredsheet }}">{{ $p->link_spredsheet }}</a></td>
+                                       
                                         <td>
                                             @if ($p->dokumen_kartu_bimbingan)
                                                 <a href="{{ asset('dokumen/kartu_bimbingan/' . basename($p->dokumen_kartu_bimbingan)) }}"
@@ -80,10 +82,16 @@
                             <tfoot>
                                 <tr>
                                     <th>No</th>
+                                    <th>Nama Lengkap</th>
+                                    <th>NIM</th>
                                     <th>Judul Proposal</th>
-                                    <th>Dosen Pembimbing</th>
-                                    <th>Dosen Penguji</th>
-                                    <th>Dosen Advisor</th>
+                                    <th>Pembimbing</th>
+                                    <th>Penguji</th>
+                                    <th>Tanggal</th>
+                                    <th>Waktu Mulai</th>
+                                    <th>Waktu Selesai</th>
+                                    <th>Tempat</th>
+                                    <th>Nilai</th>
                                     <th>Aksi</th>
                                 </tr>
                             </tfoot>

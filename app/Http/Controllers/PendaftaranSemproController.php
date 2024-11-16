@@ -60,6 +60,7 @@ class PendaftaranSemproController extends Controller
             'tempat' => 'nullable',
             'tanggal' => 'nullable',
             'waktu' => 'nullable',
+            'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
@@ -99,6 +100,7 @@ class PendaftaranSemproController extends Controller
         $pendaftaranSempro->tempat = $request->tempat;
         $pendaftaranSempro->tanggal = $request->tanggal;
         $pendaftaranSempro->waktu = $request->waktu;
+        $pendaftaranSempro->selesai = $request->selesai;
         $pendaftaranSempro->link_spredsheet = $request->link_spredsheet;
         $pendaftaranSempro->komentar = $request->komentar;
         $pendaftaranSempro->status = 'pending'; // Default to pending
@@ -139,6 +141,7 @@ class PendaftaranSemproController extends Controller
             'tempat' => 'nullable',
             'tanggal' => 'nullable',
             'waktu' => 'nullable',
+            'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
@@ -183,6 +186,7 @@ class PendaftaranSemproController extends Controller
             'tempat' => $request->tempat,
             'tanggal' => $request->tanggal,
             'waktu' => $request->waktu,
+            'selesai' => $request->selesai,
             'link_spredsheet' => $request->link_spredsheet,
             'komentar' => $request->komentar,
             'status' => 'pending',

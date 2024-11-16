@@ -31,8 +31,6 @@ class MasterMahasiswaController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'nim' => 'required|string|max:255',
-            'prodi' => 'required|string|max:255',
-            'fakultas' => 'required|string|max:255',
             'alamat' => 'required|string',
             'telepon' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
@@ -54,8 +52,6 @@ class MasterMahasiswaController extends Controller
         MasterMahasiswa::create([
             'nama' => $request->nama,
             'nim' => $request->nim,
-            'prodi' => $request->prodi,
-            'fakultas' => $request->fakultas,
             'alamat' => $request->alamat,
             'telepon' => $request->telepon,
             'user_id' => $user->id,
@@ -80,11 +76,9 @@ class MasterMahasiswaController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'nim' => 'required|string|max:255',
-            'prodi' => 'required|string|max:255',
-            'fakultas' => 'required|string|max:255',
             'alamat' => 'required|string',
             'telepon' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email,' . $id,
+            'email' => 'required|email',
             'username' => 'required|string|max:255',
             'password' => 'nullable|string|confirmed|min:6',
         ]);
@@ -96,8 +90,6 @@ class MasterMahasiswaController extends Controller
         $mahasiswa->update([
             'nama' => $request->nama,
             'nim' => $request->nim,
-            'prodi' => $request->prodi,
-            'fakultas' => $request->fakultas,
             'alamat' => $request->alamat,
             'telepon' => $request->telepon,
            

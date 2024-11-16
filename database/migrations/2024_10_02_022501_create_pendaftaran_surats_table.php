@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('surat');
             $table->string('sub_surat');
             $table->json('mahasiswa_payung')->nullable(); // ubah menjadi json
+            $table->string('berita_acara')->nullable();
+            $table->string('ethical_clearance')->nullable();
             $table->string('status')->nullable();
             $table->string('no_surat')->nullable();
             $table->string('komentar')->nullable();

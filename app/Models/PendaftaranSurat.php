@@ -16,6 +16,8 @@ class PendaftaranSurat extends Model
         'surat',
         'sub_surat',
         'mahasiswa_payung',
+        'berita_acara',
+        'ethical_clearance',
         'status',
         'no_surat',
         'komentar'

@@ -4,18 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\PendaftaranSempro;
 use App\Models\MasterDosen;
+use App\Models\MasterLink;
 use App\Models\MasterMahasiswa;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Exports\PendaftaranSemproExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 use Illuminate\Routing\Controller;
 
 class VerifSemproController extends Controller
 {
+
+
+    public function exportsempro()
+    {
+        return Excel::download(new PendaftaranSemproExport, 'pendaftaran_sempro.xlsx');
+    }
+
     public function index()
     {
         // Fetch seminar proposals with associated dosen and mahasiswa data
-        $pendaftaranSempros = PendaftaranSempro::with(['dosenpembimbing', 'dosenpenguji', 'dosenadvisor','mahasiswa'])
+        $pendaftaranSempros = PendaftaranSempro::with(['dosenpembimbing', 'dosenpenguji', 'dosenadvisor', 'mahasiswa'])
             ->get();
 
         return view('pageadmin.sempro.index', compact('pendaftaranSempros'));
@@ -24,8 +34,10 @@ class VerifSemproController extends Controller
     public function detail($id)
     {
         $pendaftaransempro = PendaftaranSempro::with(['dosenpembimbing', 'dosenpenguji', 'dosenadvisor'])
-        ->findOrFail($id);
-        return view('pageadmin.sempro.detail', compact('pendaftaransempro'));
+            ->findOrFail($id);
+        $link = MasterLink::all();
+
+        return view('pageadmin.sempro.detail', compact('pendaftaransempro', 'link'));
     }
 
     public function update(Request $request, $id)
@@ -35,14 +47,15 @@ class VerifSemproController extends Controller
             'tempat' => 'nullable',
             'tanggal' => 'nullable',
             'waktu' => 'nullable',
+            'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
-           
+
         ]);
 
         $pendaftaranSempro = PendaftaranSempro::findOrFail($id);
 
-      
+
 
         // Update the rest of the data
         $pendaftaranSempro->update([
@@ -50,6 +63,7 @@ class VerifSemproController extends Controller
             'tempat' => $request->tempat,
             'tanggal' => $request->tanggal,
             'waktu' => $request->waktu,
+            'selesai' => $request->selesai,
             'link_spredsheet' => $request->link_spredsheet,
             'komentar' => $request->komentar,
         ]);

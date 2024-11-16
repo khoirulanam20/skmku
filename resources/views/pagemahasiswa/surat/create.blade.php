@@ -71,12 +71,13 @@
 
                                 <div class="col-md-6">
                                     <label for="surat">Jenis Surat</label>
-                                    <select name="surat" id="surat" class="form-control" required>
+                                    <select name="surat" id="surat" class="form-control" required onchange="handleJenisSuratChange(this)">
                                         <option value="">Pilih Surat</option>
                                         <option value="Surat Penelitian">Surat Penelitian</option>
                                         <option value="Surat Studi Pendahuluan">Surat Studi Pendahuluan</option>
                                     </select>
                                 </div>
+                                
 
                                 <div class="col-md-6">
                                     <label for="sub_surat">Sub Surat</label>
@@ -117,6 +118,17 @@
 
 
                                 <!-- File upload fields -->
+                                <div class="col-md-6" id="beritaAcaraField" style="display:none;">
+                                    <label for="berita_acara" class="form-label">Berita Acara</label>
+                                    <input type="file" class="form-control" id="berita_acara" name="berita_acara">
+                                </div>
+                                <div class="col-md-6" id="ethicalClearanceField" style="display:none;">
+                                    <label for="ethical_clearance" class="form-label">Ethical Clearance</label>
+                                    <input type="file" class="form-control" id="ethical_clearance"
+                                        name="ethical_clearance">
+                                </div>
+                                <!-- File upload fields -->
+
 
 
                                 <div class="col-12">
@@ -150,6 +162,20 @@
             }
         }
 
+        // Function to handle jenis surat change
+        function handleJenisSuratChange(select) {
+            const beritaAcaraField = document.getElementById('beritaAcaraField');
+            const ethicalClearanceField = document.getElementById('ethicalClearanceField');
+
+            if (select.value === 'Surat Penelitian') {
+                beritaAcaraField.style.display = 'block';
+                ethicalClearanceField.style.display = 'block';
+            } else {
+                beritaAcaraField.style.display = 'none';
+                ethicalClearanceField.style.display = 'none';
+            }
+        }
+
         // Function to add more mahasiswa payung fields dynamically
         function addMahasiswaField() {
             const container = document.getElementById('mahasiswaPayungContainer');
@@ -158,16 +184,16 @@
             newField.classList.add('form-row', 'mb-3');
             newField.id = newFieldId;
             newField.innerHTML = `
-        <div class="col">
-            <input type="text" name="mahasiswa_payung[${mahasiswaCount}][nama]" class="form-control" placeholder="Nama Mahasiswa" required>
-        </div>
-        <div class="col">
-            <input type="text" name="mahasiswa_payung[${mahasiswaCount}][nim]" class="form-control" placeholder="NIM Mahasiswa" required>
-        </div>
-        <div class="col">
-            <button type="button" class="btn btn-danger" onclick="removeMahasiswaField('${newFieldId}')">Hapus</button>
-        </div>
-    `;
+            <div class="col">
+                <input type="text" name="mahasiswa_payung[${mahasiswaCount}][nama]" class="form-control" placeholder="Nama Mahasiswa" required>
+            </div>
+            <div class="col">
+                <input type="text" name="mahasiswa_payung[${mahasiswaCount}][nim]" class="form-control" placeholder="NIM Mahasiswa" required>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-danger" onclick="removeMahasiswaField('${newFieldId}')">Hapus</button>
+            </div>
+        `;
             container.appendChild(newField);
             mahasiswaCount++;
         }

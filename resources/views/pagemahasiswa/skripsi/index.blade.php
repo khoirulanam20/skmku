@@ -31,6 +31,9 @@
                                     <th>Dosen Pembimbing</th>
                                     <th>Dosen Ketua Penguji</th>
                                     <th>Dosen Penguji</th>
+                                    <th>Tempat</th>
+                                    <th>Waktu Mulai</th>
+                                    <th>Waktu Selesai</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -44,6 +47,9 @@
                                         <td>{{ $p->dosenpembimbing->nama }}</td>
                                         <td>{{ $p->dosenketuapenguji->nama }}</td>
                                         <td>{{ $p->dosenpenguji->nama }}</td>
+                                        <td>{{ $p->tempat }}</td>
+                                        <td>{{ $p->waktu }}</td>
+                                        <td>{{ $p->selesai }}</td>
                                         <td>
                                             @if ($p->status == 'pending')
                                                 <span class="badge bg-warning">Pending</span>
@@ -157,6 +163,9 @@
                                     <th>Dosen Pembimbing</th>
                                     <th>Dosen Ketua Penguji</th>
                                     <th>Dosen Penguji</th>
+                                    <th>Tempat</th>
+                                    <th>Waktu Mulai</th>
+                                    <th>Waktu Selesai</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>

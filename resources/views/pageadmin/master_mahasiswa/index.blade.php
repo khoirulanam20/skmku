@@ -28,8 +28,6 @@
                                 <th>No</th>
                                 <th>Nama Mahasiswa</th>
                                 <th>NIM</th>
-                                <th>Prodi</th>
-                                <th>Fakultas</th>
                                 <th>Alamat</th>
                                 <th>Telepon</th>
                                 <th>Email</th>
@@ -42,8 +40,6 @@
                                 <td>{{ $index + 1 }}</td>
                                 <td>{{ $p->nama }}</td>
                                 <td>{{ $p->nim }}</td>
-                                <td>{{ $p->prodi }}</td>
-                                <td>{{ $p->fakultas }}</td>
                                 <td>{{ $p->alamat }}</td>
                                 <td>{{ $p->telepon }}</td>
                                 <td>{{ $p->user->email }}</td>
@@ -63,8 +59,6 @@
                                 <th>No</th>
                                 <th>Nama Mahasiswa</th>
                                 <th>NIM</th>
-                                <th>Prodi</th>
-                                <th>Fakultas</th>
                                 <th>Alamat</th>
                                 <th>Telepon</th>
                                 <th>Email</th>

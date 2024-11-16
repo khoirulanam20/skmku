@@ -73,7 +73,7 @@
                     <tr>
                         <td style="width: 200px;">Judul Skripsi</td>
                         <td style="width: 20px;">:</td>
-                        <td class="">{{ $pendaftaranskripsi->judul_proposal }}</td>
+                        <td class="">{{ $pendaftaranskripsi->judul_skripsi }}</td>
                     </tr>
                 </table>
                 

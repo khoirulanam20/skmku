@@ -16,6 +16,15 @@
             </div>
         </div>
         <!--breadcrumb-->
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
         <div class="row">
             <div class="col-xl-7 mx-auto">
@@ -36,16 +45,9 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="nim" class="form-label">NIM</label>
-                                <input type="number" class="form-control" id="nim" name="nim" value="{{ old('nim', $mahasiswa->nim) }}" required>
+                                <input type="text" class="form-control" id="nim" name="nim" value="{{ old('nim', $mahasiswa->nim) }}" required>
                             </div>
-                            <div class="col-md-6">
-                                <label for="prodi" class="form-label">Prodi</label>
-                                <input type="text" class="form-control" id="prodi" name="prodi" value="{{ old('prodi', $mahasiswa->prodi) }}" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="fakultas" class="form-label">Fakultas</label>
-                                <input type="text" class="form-control" id="fakultas" name="fakultas" value="{{ old('fakultas', $mahasiswa->fakultas) }}" required>
-                            </div>
+                          
                             <div class="col-md-6">
                                 <label for="telepon" class="form-label">No HP Aktif</label>
                                 <input type="text" class="form-control" id="telepon" name="telepon" value="{{ old('telepon', $mahasiswa->telepon) }}" required>

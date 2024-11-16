@@ -39,15 +39,15 @@ class LoginController extends Controller
                 return redirect()->route('admin.dashboard');
             } elseif ($user->role == 'mahasiswa') {
                 Alert::success('Login Successful', 'Welcome back, Mahasiswa!');
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('mahasiswa.dashboard');
             } elseif ($user->role == 'dosen') {
                 Alert::success('Login Successful', 'Welcome back, Dosen!');
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('dosen.dashboard');
             } else {
                 // Logout jika peran tidak sesuai
                 Auth::logout();
                 Alert::error('Login Failed', 'You are not authorized to access this area.');
-                return redirect('/login');
+                return redirect('/');
             }
         }
         
@@ -67,6 +67,6 @@ class LoginController extends Controller
     {
         Auth::logout();
         Alert::info('Logged Out', 'You have been logged out.');
-        return redirect('/login');
+        return redirect('/');
     }
 }

@@ -126,27 +126,47 @@
                                 
                                 <!-- KETIKA DI TERIMA -->
                                 <div id="form-diterima" class="row mt-3">
-                                    <div class="col-md-6">
+                                    <!-- Tempat and Tanggal -->
+                                    <div class="col-md-6 mb-3">
                                         <label for="tempat" class="form-label">Tempat</label>
-                                        <input type="text" class="form-control" id="tempat" name="tempat" value="{{ $pendaftaransempro->tempat }}"
-                                            placeholder="Tempat">
+                                        <input type="text" class="form-control" id="tempat" name="tempat" 
+                                            value="{{ $pendaftaransempro->tempat }}" placeholder="Tempat">
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 mb-3">
                                         <label for="tanggal" class="form-label">Tanggal</label>
-                                        <input type="date" class="form-control" id="tanggal" name="tanggal" value="{{ $pendaftaransempro->tanggal }}"
-                                            placeholder="Tanggal">
+                                        <input type="date" class="form-control" id="tanggal" name="tanggal" 
+                                            value="{{ $pendaftaransempro->tanggal }}" placeholder="Tanggal">
                                     </div>
-                                    <div class="col-md-6">
+                                
+                                    <!-- Waktu and Selesai -->
+                                    <div class="col-md-6 mb-3">
                                         <label for="waktu" class="form-label">Waktu</label>
-                                        <input type="time" class="form-control" id="waktu" name="waktu" value="{{ $pendaftaransempro->waktu }}"
-                                            placeholder="Waktu">
+                                        <input type="time" class="form-control" id="waktu" name="waktu" 
+                                            value="{{ $pendaftaransempro->waktu }}" placeholder="Waktu">
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="link_spredsheet" class="form-label">Link Spredsheet</label>
-                                        <input type="text" class="form-control" id="link_spredsheet"
-                                            name="link_spredsheet" value="{{ $pendaftaransempro->link_spredsheet }}" placeholder="Link Spredsheet">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="selesai" class="form-label">Selesai</label>
+                                        <input type="time" class="form-control" id="selesai" name="selesai" 
+                                            value="{{ $pendaftaransempro->selesai }}" placeholder="Selesai">
                                     </div>
+                                
+                                    <!-- Link Spreadsheet -->
+                                    <div class="col-12 mb-3">
+                                        <label for="link_spredsheet" class="form-label">Link Spreadsheet</label>
+                                        <input type="text" class="form-control" id="link_spredsheet" 
+                                            name="link_spredsheet" value="{{ $pendaftaransempro->link_spredsheet }}" placeholder="Link Spreadsheet">
+                                    </div>
+                                <hr>
+                                    <!-- Additional Links -->
+                                    @foreach ($link as $index => $p)
+                                    <div class="col-12 mb-3">
+                                        <label for="link_{{ $index }}" class="form-label">{{ $p->nama }}</label>
+                                        <a href="{{ $p->link }}" id="link_{{ $index }}" class="d-block">{{ $p->link }}</a>
+                                    </div>
+                                    @endforeach
                                 </div>
+                                
+                                
 
                                 <!-- KETIKA DI TOLAK -->
                                 <div id="form-ditolak" class="row mt-3" style="display: none;">
