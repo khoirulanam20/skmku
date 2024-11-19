@@ -31,10 +31,9 @@ class MasterMahasiswaController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'nim' => 'required|string|max:255',
-            'alamat' => 'required|string',
-            'telepon' => 'required|string|max:255',
+            'alamat' => 'nullable',
+            'telepon' => 'nullable',
             'email' => 'required|email|unique:users,email',
-            'alamat' => 'required|string|max:255',
             'username' => 'required|string|max:255',
             'password' => 'required|string|confirmed|min:6',
         ]);
@@ -76,8 +75,8 @@ class MasterMahasiswaController extends Controller
         $request->validate([
             'nama' => 'required|string|max:255',
             'nim' => 'required|string|max:255',
-            'alamat' => 'required|string',
-            'telepon' => 'required|string|max:255',
+            'alamat' => 'nullable',
+            'telepon' => 'nullable',
             'email' => 'required|email',
             'username' => 'required|string|max:255',
             'password' => 'nullable|string|confirmed|min:6',

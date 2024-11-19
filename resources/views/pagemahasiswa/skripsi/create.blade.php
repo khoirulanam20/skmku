@@ -110,77 +110,77 @@
                                         Pendaftaran Sidang Skripsi</label>
                                     <input type="file" class="form-control"
                                         id="file_persetujuan_pendaftaran_sidang_skripsi"
-                                        name="file_persetujuan_pendaftaran_sidang_skripsi" required>
+                                        name="file_persetujuan_pendaftaran_sidang_skripsi" accept=".pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dokumen_pendaftaran_ujian_skripsi" class="form-label">Pendaftaran Ujian
                                         Skripsi</label>
                                     <input type="file" class="form-control" id="dokumen_pendaftaran_ujian_skripsi"
-                                        name="dokumen_pendaftaran_ujian_skripsi" required>
+                                        name="dokumen_pendaftaran_ujian_skripsi" accept=".pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="kartu_bimbingan" class="form-label">Kartu Bimbingan</label>
-                                    <input type="file" class="form-control" id="kartu_bimbingan" name="kartu_bimbingan"
+                                    <input type="file" class="form-control" id="kartu_bimbingan" name="kartu_bimbingan" accept=".pdf"
                                         required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dokumen_kartu_rencana_studi" class="form-label">Kartu Rencana
                                         Studi</label>
                                     <input type="file" class="form-control" id="dokumen_kartu_rencana_studi"
-                                        name="dokumen_kartu_rencana_studi" required>
+                                        name="dokumen_kartu_rencana_studi" accept=".pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dokumen_transkrip_nilai" class="form-label">Transkrip Nilai</label>
                                     <input type="file" class="form-control" id="dokumen_transkrip_nilai"
-                                        name="dokumen_transkrip_nilai" required>
+                                        name="dokumen_transkrip_nilai" accept=".pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dokumen_bebas_biaya_administrasi" class="form-label">Bebas Biaya
                                         Administrasi</label>
                                     <input type="file" class="form-control" id="dokumen_bebas_biaya_administrasi"
-                                        name="dokumen_bebas_biaya_administrasi" required>
+                                        name="dokumen_bebas_biaya_administrasi" accept=".pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dokumen_bebas_pinjaman_perpustakaan" class="form-label">Bebas Pinjaman
                                         Perpustakaan</label>
                                     <input type="file" class="form-control" id="dokumen_bebas_pinjaman_perpustakaan"
-                                        name="dokumen_bebas_pinjaman_perpustakaan" required>
+                                        name="dokumen_bebas_pinjaman_perpustakaan" accept=".pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dokumen_ijazah_terakhir" class="form-label">Ijazah Terakhir</label>
                                     <input type="file" class="form-control" id="dokumen_ijazah_terakhir"
-                                        name="dokumen_ijazah_terakhir" required>
+                                        name="dokumen_ijazah_terakhir" accept=".pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dokumen_fotocopy_toefl" class="form-label">Fotocopy TOEFL</label>
                                     <input type="file" class="form-control" id="dokumen_fotocopy_toefl"
-                                        name="dokumen_fotocopy_toefl" required>
+                                        name="dokumen_fotocopy_toefl" accept=".pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dokumen_input_skpi" class="form-label">Input SKPI</label>
                                     <input type="file" class="form-control" id="dokumen_input_skpi"
-                                        name="dokumen_input_skpi" required>
+                                        name="dokumen_input_skpi" accept=".png,.jpg,.jpeg,.pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="draft_skripsi" class="form-label">Draft Skripsi</label>
-                                    <input type="file" class="form-control" id="draft_skripsi" name="draft_skripsi"
+                                    <input type="file" class="form-control" id="draft_skripsi" name="draft_skripsi" accept=".pdf"
                                         required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="dokumen_artikel_ilmiah" class="form-label">Artikel Ilmiah</label>
                                     <input type="file" class="form-control" id="dokumen_artikel_ilmiah"
-                                        name="dokumen_artikel_ilmiah" required>
+                                        name="dokumen_artikel_ilmiah" accept=".pdf" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="file_turnitin" class="form-label">File Turnitin</label>
-                                    <input type="file" class="form-control" id="file_turnitin" name="file_turnitin"
+                                    <input type="file" class="form-control" id="file_turnitin" name="file_turnitin" accept=".pdf"
                                         required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="bukti_pendaftaran_siadin" class="form-label">Bukti Pendaftaran
                                         SIADIN</label>
                                     <input type="file" class="form-control" id="bukti_pendaftaran_siadin"
-                                        name="bukti_pendaftaran_siadin" required>
+                                        name="bukti_pendaftaran_siadin" accept=".pdf" required>
                                 </div>
 
 

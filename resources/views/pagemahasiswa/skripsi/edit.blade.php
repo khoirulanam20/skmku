@@ -111,85 +111,85 @@
                              
                                 <div class="col-md-6">
                                     <label for="file_persetujuan_pendaftaran_sidang_skripsi" class="form-label">Persetujuan Pendaftaran Sidang Skripsi</label>
-                                    <input type="file" class="form-control" id="file_persetujuan_pendaftaran_sidang_skripsi" name="file_persetujuan_pendaftaran_sidang_skripsi">
+                                    <input type="file" class="form-control" id="file_persetujuan_pendaftaran_sidang_skripsi" accept=".pdf" name="file_persetujuan_pendaftaran_sidang_skripsi">
                                     <a href="{{ asset('dokumen/persetujuan_pendaftaran_sidang_skripsi/' . basename($pendaftaranskripsi->file_persetujuan_pendaftaran_sidang_skripsi)) }}" target="_blank">Lihat Persetujuan Pendaftaran Sidang Skripsi</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="dokumen_pendaftaran_ujian_skripsi" class="form-label">Pendaftaran Ujian Skripsi</label>
-                                    <input type="file" class="form-control" id="dokumen_pendaftaran_ujian_skripsi" name="dokumen_pendaftaran_ujian_skripsi">
+                                    <input type="file" class="form-control" id="dokumen_pendaftaran_ujian_skripsi" accept=".pdf" name="dokumen_pendaftaran_ujian_skripsi">
                                     <a href="{{ asset('dokumen/pendaftaran_ujian_skripsi/' . basename($pendaftaranskripsi->dokumen_pendaftaran_ujian_skripsi)) }}" target="_blank">Lihat Pendaftaran Ujian Skripsi</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="kartu_bimbingan" class="form-label">Kartu Bimbingan</label>
-                                    <input type="file" class="form-control" id="kartu_bimbingan" name="kartu_bimbingan">
+                                    <input type="file" class="form-control" id="kartu_bimbingan" accept=".pdf" name="kartu_bimbingan">
                                     <a href="{{ asset('dokumen/kartu_bimbingan/' . basename($pendaftaranskripsi->kartu_bimbingan)) }}" target="_blank">Lihat Kartu Bimbingan</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="dokumen_kartu_rencana_studi" class="form-label">Kartu Rencana Studi</label>
-                                    <input type="file" class="form-control" id="dokumen_kartu_rencana_studi" name="dokumen_kartu_rencana_studi">
+                                    <input type="file" class="form-control" id="dokumen_kartu_rencana_studi" accept=".pdf" name="dokumen_kartu_rencana_studi">
                                     <a href="{{ asset('dokumen/kartu_rencana_studi/' . basename($pendaftaranskripsi->dokumen_kartu_rencana_studi)) }}" target="_blank">Lihat Kartu Rencana Studi</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="dokumen_transkrip_nilai" class="form-label">Transkrip Nilai</label>
-                                    <input type="file" class="form-control" id="dokumen_transkrip_nilai" name="dokumen_transkrip_nilai">
+                                    <input type="file" class="form-control" id="dokumen_transkrip_nilai" accept=".pdf" name="dokumen_transkrip_nilai">
                                     <a href="{{ asset('dokumen/transkrip_nilai/' . basename($pendaftaranskripsi->dokumen_transkrip_nilai)) }}" target="_blank">Lihat Transkrip Nilai</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="dokumen_bebas_biaya_administrasi" class="form-label">Bebas Biaya Administrasi</label>
-                                    <input type="file" class="form-control" id="dokumen_bebas_biaya_administrasi" name="dokumen_bebas_biaya_administrasi">
+                                    <input type="file" class="form-control" id="dokumen_bebas_biaya_administrasi" accept=".pdf" name="dokumen_bebas_biaya_administrasi">
                                     <a href="{{ asset('dokumen/bebas_biaya_administrasi/' . basename($pendaftaranskripsi->dokumen_bebas_biaya_administrasi)) }}" target="_blank">Lihat Bebas Biaya Administrasi</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="dokumen_bebas_pinjaman_perpustakaan" class="form-label">Bebas Pinjaman Perpustakaan</label>
-                                    <input type="file" class="form-control" id="dokumen_bebas_pinjaman_perpustakaan" name="dokumen_bebas_pinjaman_perpustakaan">
+                                    <input type="file" class="form-control" id="dokumen_bebas_pinjaman_perpustakaan" accept=".pdf" name="dokumen_bebas_pinjaman_perpustakaan">
                                     <a href="{{ asset('dokumen/bebas_pinjaman_perpustakaan/' . basename($pendaftaranskripsi->dokumen_bebas_pinjaman_perpustakaan)) }}" target="_blank">Lihat Bebas Pinjaman Perpustakaan</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="dokumen_ijazah_terakhir" class="form-label">Ijazah Terakhir</label>
-                                    <input type="file" class="form-control" id="dokumen_ijazah_terakhir" name="dokumen_ijazah_terakhir">
+                                    <input type="file" class="form-control" id="dokumen_ijazah_terakhir" accept=".pdf" name="dokumen_ijazah_terakhir">
                                     <a href="{{ asset('dokumen/ijazah_terakhir/' . basename($pendaftaranskripsi->dokumen_ijazah_terakhir)) }}" target="_blank">Lihat Ijazah Terakhir</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="dokumen_fotocopy_toefl" class="form-label">Fotocopy TOEFL</label>
-                                    <input type="file" class="form-control" id="dokumen_fotocopy_toefl" name="dokumen_fotocopy_toefl">
+                                    <input type="file" class="form-control" id="dokumen_fotocopy_toefl" accept=".pdf" name="dokumen_fotocopy_toefl">
                                     <a href="{{ asset('dokumen/fotocopy_toefl/' . basename($pendaftaranskripsi->dokumen_fotocopy_toefl)) }}" target="_blank">Lihat Fotocopy TOEFL</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="dokumen_input_skpi" class="form-label">Input SKPI</label>
-                                    <input type="file" class="form-control" id="dokumen_input_skpi" name="dokumen_input_skpi">
+                                    <input type="file" class="form-control" id="dokumen_input_skpi" accept=".png,.jpg,.jpeg,.pdf" name="dokumen_input_skpi">
                                     <a href="{{ asset('dokumen/input_skpi/' . basename($pendaftaranskripsi->dokumen_input_skpi)) }}" target="_blank">Lihat Input SKPI</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="draft_skripsi" class="form-label">Draft Skripsi</label>
-                                    <input type="file" class="form-control" id="draft_skripsi" name="draft_skripsi">
+                                    <input type="file" class="form-control" id="draft_skripsi" accept=".pdf" name="draft_skripsi">
                                     <a href="{{ asset('dokumen/draft_skripsi/' . basename($pendaftaranskripsi->draft_skripsi)) }}" target="_blank">Lihat Draft Skripsi</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="dokumen_artikel_ilmiah" class="form-label">Artikel Ilmiah</label>
-                                    <input type="file" class="form-control" id="dokumen_artikel_ilmiah" name="dokumen_artikel_ilmiah">
+                                    <input type="file" class="form-control" id="dokumen_artikel_ilmiah" accept=".pdf" name="dokumen_artikel_ilmiah">
                                     <a href="{{ asset('dokumen/artikel_ilmiah/' . basename($pendaftaranskripsi->dokumen_artikel_ilmiah)) }}" target="_blank">Lihat Artikel Ilmiah</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="file_turnitin" class="form-label">File Turnitin</label>
-                                    <input type="file" class="form-control" id="file_turnitin" name="file_turnitin">
+                                    <input type="file" class="form-control" id="file_turnitin" accept=".pdf" name="file_turnitin">
                                     <a href="{{ asset('dokumen/turnitin/' . basename($pendaftaranskripsi->file_turnitin)) }}" target="_blank">Lihat File Turnitin</a><br>
                                 </div>
                                 
                                 <div class="col-md-6">
                                     <label for="bukti_pendaftaran_siadin" class="form-label">Bukti Pendaftaran SIADIN</label>
-                                    <input type="file" class="form-control" id="bukti_pendaftaran_siadin" name="bukti_pendaftaran_siadin">
+                                    <input type="file" class="form-control" id="bukti_pendaftaran_siadin" accept=".pdf" name="bukti_pendaftaran_siadin">
                                     <a href="{{ asset('dokumen/bukti_pendaftaran_siadin/' . basename($pendaftaranskripsi->bukti_pendaftaran_siadin)) }}" target="_blank">Lihat Bukti Pendaftaran SIADIN</a><br>
                                 </div>
                                 

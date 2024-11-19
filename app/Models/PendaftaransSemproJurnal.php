@@ -27,6 +27,7 @@ class PendaftaransSemproJurnal extends Model
         'selesai',
         'link_spredsheet',
         'komentar',
+        'nilai',
         'status',
     ];
     public function dosenpembimbing()

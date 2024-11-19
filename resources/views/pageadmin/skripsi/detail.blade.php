@@ -157,6 +157,7 @@
 
                                 <div class="col-md-12 text-center">
                                     <!-- First Radio Button (Diterima) -->
+                                  
                                     <input type="radio" class="btn-check" name="status" id="success-outlined" value="diterima" 
                                     autocomplete="off" {{ $pendaftaranskripsi->status == 'diterima' ? 'checked' : '' }}>
                                     <label class="btn btn-outline-success me-3" for="success-outlined">Diterima</label>
@@ -169,6 +170,11 @@
                                 
                                 <!-- KETIKA DI TERIMA -->
                                 <div id="form-diterima" class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label for="nilai" class="form-label">Nilai</label>
+                                        <input type="number" class="form-control" id="nilai" name="nilai" 
+                                            value="{{ $pendaftaranskripsi->nilai }}" placeholder="Nilai">
+                                    </div>
                                     <div class="col-md-6">
                                         <label for="tempat" class="form-label">Tempat</label>
                                         <input type="text" class="form-control" id="tempat" name="tempat" value="{{ $pendaftaranskripsi->tempat }}"

@@ -38,6 +38,7 @@ class PendaftaransSkripsiJurnal extends Model
         'selesai',
         'link_spredsheet',
         'komentar',
+        'nilai',
         'status',
     ];
 

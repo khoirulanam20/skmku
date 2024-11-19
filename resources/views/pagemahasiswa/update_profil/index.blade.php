@@ -10,7 +10,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mb-0 p-0">
                         <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Master Mahasiswa</li>
+                        <li class="breadcrumb-item active" aria-current="page">Profil Mahasiswa</li>
                     </ol>
                 </nav>
             </div>
@@ -33,10 +33,10 @@
                     <div class="card-body p-5">
                         <div class="card-title d-flex align-items-center">
                             <div><i class="bx bxs-user me-1 font-22 text-primary"></i></div>
-                            <h5 class="mb-0 text-primary">Edit Master Mahasiswa</h5>
+                            <h5 class="mb-0 text-primary">Profil Mahasiswa</h5>
                         </div>
                         <hr>
-                        <form action="{{ route('mahasiswa.update', $mahasiswa->id) }}" method="POST" class="row g-3">
+                        <form action="{{ route('profilmahasiswa.update', $mahasiswa->id) }}" method="POST" class="row g-3">
                             @csrf
                             @method('PUT')
                             <div class="col-md-6">
@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="col-12">
-                                <button type="submit" class="btn btn-primary px-5">Simpan</button>
+                                <button type="submit" class="btn btn-primary px-5">Perbarui</button>
                             </div>
                         </form>
                     </div>

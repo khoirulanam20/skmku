@@ -25,6 +25,7 @@ class PendaftaranSempro extends Model
         'selesai',
         'link_spredsheet',
         'komentar',
+        'nilai',
         'status',
     ];
     public function dosenpembimbing()

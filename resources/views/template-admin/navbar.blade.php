@@ -7,6 +7,12 @@
             <div class="menu-title">DASHBOARD</div>
         </a>
     </li>
+    <li>
+        <a href="/profil-admin">
+            <div class="parent-icon"><i class='bx bx-user'></i></div>
+            <div class="menu-title">AKUN ADMIN</div>
+        </a>
+    </li>
     @elseif(Auth::user()->role == 'dosen')
     <li class="menu-label">DASHBOARD</li>
     <li>
@@ -21,6 +27,12 @@
         <a href="/dashboard-mahasiswa">
             <div class="parent-icon"><i class='bx bx-home-circle'></i></div>
             <div class="menu-title">DASHBOARD</div>
+        </a>
+    </li>
+    <li>
+        <a href="/profil-mahasiswa">
+            <div class="parent-icon"><i class='bx bx-user'></i></div>
+            <div class="menu-title">PROFIL MAHASISWA</div>
         </a>
     </li>
     @endif
@@ -147,6 +159,12 @@
     </li>
     @endif
     @if(Auth::user()->role == 'dosen')
+    <li>
+        <a href="/profil-dosen">
+            <div class="parent-icon"><i class='bx bx-user'></i></div>
+            <div class="menu-title">PROFIL DOSEN</div>
+        </a>
+    </li>
     <li>
         <a href="/datasempro">
             <div class="parent-icon"><i class='bx bx-book-content'></i></div>

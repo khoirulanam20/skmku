@@ -35,6 +35,7 @@
                                     <th>Tempat</th>
                                     <th>Waktu Mulai</th>
                                     <th>Waktu Selesai</th>
+                                    <th>Nilai</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -52,6 +53,7 @@
                                         <td>{{ $p->tempat }}</td>
                                         <td>{{ $p->waktu }}</td>
                                         <td>{{ $p->selesai }}</td>
+                                        <td>{{ $p->nilai }}</td>
                                         <td>
                                             @if ($p->status == 'pending')
                                                 <span class="badge bg-warning">Pending</span>
@@ -83,6 +85,7 @@
                                     <th>Tempat</th>
                                     <th>Waktu Mulai</th>
                                     <th>Waktu Selesai</th>
+                                    <th>Nilai</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>

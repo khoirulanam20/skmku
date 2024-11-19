@@ -31,6 +31,7 @@ return new class extends Migration
             $table->string('selesai')->nullable();
             $table->string('link_spredsheet')->nullable();
             $table->string('komentar')->nullable();
+            $table->integer('nilai')->nullable();
             $table->string('status');
             $table->timestamps();
         });

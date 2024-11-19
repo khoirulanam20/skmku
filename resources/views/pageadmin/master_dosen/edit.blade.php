@@ -16,7 +16,16 @@
             </div>
         </div>
         <!--breadcrumb-->
-
+ <!--breadcrumb-->
+ @if ($errors->any())
+ <div class="alert alert-danger">
+     <ul>
+         @foreach ($errors->all() as $error)
+             <li>{{ $error }}</li>
+         @endforeach
+     </ul>
+ </div>
+@endif
         <div class="row">
             <div class="col-xl-7 mx-auto">
                 <hr/>
@@ -40,7 +49,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="telepon" class="form-label">No HP Aktif</label>
-                                <input type="text" class="form-control" id="telepon" name="telepon" value="{{ old('telepon', $dosen->telepon) }}" required>
+                                <input type="text" class="form-control" id="telepon" name="telepon" value="{{ old('telepon', $dosen->telepon) }}" >
                             </div>
                            
                             <div class="col-md-6">
@@ -49,7 +58,7 @@
                             </div>
                             <div class="col-12">
                                 <label for="alamat" class="form-label">Alamat Mahasiswa</label>
-                                <textarea class="form-control" id="alamat" name="alamat" rows="3" required>{{ old('alamat', $dosen->alamat) }}</textarea>
+                                <textarea class="form-control" id="alamat" name="alamat" rows="3" >{{ old('alamat', $dosen->alamat) }}</textarea>
                             </div>
 
                             <!-- User Account Fields -->

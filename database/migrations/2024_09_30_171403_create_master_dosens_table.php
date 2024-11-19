@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->string('nidn');
-            $table->string('alamat');
-            $table->string('telepon');
+            $table->string('alamat')->nullable();
+            $table->string('telepon')->nullable();
             $table->foreignId('user_id');
             $table->timestamps();
         });

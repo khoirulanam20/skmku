@@ -36,14 +36,28 @@ class PendaftaranSkripsiExport implements FromCollection, WithHeadings, WithStyl
             'Waktu',
             'Selesai',
             'Link Spreadsheet',
-          
+            'File Persetujuan Pendaftaran',
+            'Dokumen Pendaftaran Ujian',
+            'Kartu Bimbingan',
+            'Kartu Rencana Studi',
+            'Transkrip Nilai',
+            'Bebas Biaya Administrasi',
+            'Bebas Pinjaman Perpustakaan',
+            'Ijazah Terakhir',
+            'Fotocopy TOEFL',
+            'Input SKPI',
+            'Draft Skripsi',
+            'Artikel Ilmiah',
+            'File Turnitin',
+            'Bukti Pendaftaran SIADIN',
+            'Nilai'
         ];
     }
 
     public function styles(Worksheet $sheet)
     {
         // Style the header row with a background color and bold text
-        $sheet->getStyle('A1:N1')->applyFromArray([
+        $sheet->getStyle('A1:AA1')->applyFromArray([
             'font' => [
                 'bold' => true,
                 'color' => ['argb' => Color::COLOR_WHITE],
@@ -73,7 +87,21 @@ class PendaftaranSkripsiExport implements FromCollection, WithHeadings, WithStyl
             $item->waktu,
             $item->selesai,
             $item->link_spredsheet,
-        
+            $item->file_persetujuan_pendaftaran_sidang_skripsi ? config('app.url') . '/' . $item->file_persetujuan_pendaftaran_sidang_skripsi : '',
+            $item->dokumen_pendaftaran_ujian_skripsi ? config('app.url') . '/' . $item->dokumen_pendaftaran_ujian_skripsi : '',
+            $item->kartu_bimbingan ? config('app.url') . '/' . $item->kartu_bimbingan : '',
+            $item->dokumen_kartu_rencana_studi ? config('app.url') . '/' . $item->dokumen_kartu_rencana_studi : '',
+            $item->dokumen_transkrip_nilai ? config('app.url') . '/' . $item->dokumen_transkrip_nilai : '',
+            $item->dokumen_bebas_biaya_administrasi ? config('app.url') . '/' . $item->dokumen_bebas_biaya_administrasi : '',
+            $item->dokumen_bebas_pinjaman_perpustakaan ? config('app.url') . '/' . $item->dokumen_bebas_pinjaman_perpustakaan : '',
+            $item->dokumen_ijazah_terakhir ? config('app.url') . '/' . $item->dokumen_ijazah_terakhir : '',
+            $item->dokumen_fotocopy_toefl ? config('app.url') . '/' . $item->dokumen_fotocopy_toefl : '',
+            $item->dokumen_input_skpi ? config('app.url') . '/' . $item->dokumen_input_skpi : '',
+            $item->draft_skripsi ? config('app.url') . '/' . $item->draft_skripsi : '',
+            $item->dokumen_artikel_ilmiah ? config('app.url') . '/' . $item->dokumen_artikel_ilmiah : '',
+            $item->file_turnitin ? config('app.url') . '/' . $item->file_turnitin : '',
+            $item->bukti_pendaftaran_siadin ? config('app.url') . '/' . $item->bukti_pendaftaran_siadin : '',
+            $item->nilai,
         ];
     }
 
@@ -92,7 +120,21 @@ class PendaftaranSkripsiExport implements FromCollection, WithHeadings, WithStyl
             'J' => 10,  // Waktu
             'K' => 10,  // Selesai
             'L' => 30,  // Link Spreadsheet
-           
+            'M' => 10,  // Nilai
+            'N' => 50,  // File Persetujuan
+            'O' => 50,  // Dokumen Pendaftaran
+            'P' => 50,  // Kartu Bimbingan
+            'Q' => 50,  // KRS
+            'R' => 50,  // Transkrip
+            'S' => 50,  // Bebas Biaya
+            'T' => 50,  // Bebas Perpus
+            'U' => 50,  // Ijazah
+            'V' => 50,  // TOEFL
+            'W' => 50,  // SKPI
+            'X' => 50,  // Draft
+            'Y' => 50,  // Artikel
+            'Z' => 50,  // Turnitin
+            'AA' => 50, // SIADIN
         ];
     }
 }

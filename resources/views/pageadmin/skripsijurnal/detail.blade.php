@@ -182,7 +182,13 @@
                                 </div>
                                 
                                 <!-- KETIKA DI TERIMA -->
+                                
                                 <div id="form-diterima" class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label for="nilai" class="form-label">Nilai</label>
+                                        <input type="number" class="form-control" id="nilai" name="nilai" 
+                                            value="{{ $pendaftaranskripsijurnal->nilai }}" placeholder="Nilai">
+                                    </div>
                                     <div class="col-md-6">
                                         <label for="tempat" class="form-label">Tempat</label>
                                         <input type="text" class="form-control" id="tempat" name="tempat" value="{{ $pendaftaranskripsijurnal->tempat }}"

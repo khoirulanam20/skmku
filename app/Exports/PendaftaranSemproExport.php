@@ -35,20 +35,26 @@ class PendaftaranSemproExport implements FromCollection, WithHeadings, WithStyle
             'Waktu',
             'Selesai',
             'Link Spreadsheet',
+            'Kartu Bimbingan',
+            'Kehadiran Seminar',
+            'Turnitin',
+            'Pendaftaran Seminar',
+            'Draf Proposal',
+            'Nilai',
         ];
     }
 
     public function styles(Worksheet $sheet)
     {
         // Style the header row with a background color and bold text
-        $sheet->getStyle('A1:K1')->applyFromArray([
+        $sheet->getStyle('A1:Q1')->applyFromArray([
             'font' => [
                 'bold' => true,
                 'color' => ['argb' => Color::COLOR_WHITE],
             ],
             'fill' => [
                 'fillType' => Fill::FILL_SOLID,
-                'startColor' => ['argb' => 'FF4CAF50'], // Example: green background
+                'startColor' => ['argb' => 'FF4CAF50'],
             ],
         ]);
 
@@ -70,6 +76,12 @@ class PendaftaranSemproExport implements FromCollection, WithHeadings, WithStyle
             $item->waktu,
             $item->selesai,
             $item->link_spredsheet,
+            config('app.url').'/'.$item->dokumen_kartu_bimbingan,
+            config('app.url').'/'.$item->dokumen_kehadiran_seminar_proposal,
+            config('app.url').'/'.$item->dokumen_turnitin,
+            config('app.url').'/'.$item->dokumen_pendaftaran_seminar_proposal,
+            config('app.url').'/'.$item->draf_proposal,
+            $item->nilai,
         ];
     }
 
@@ -87,6 +99,12 @@ class PendaftaranSemproExport implements FromCollection, WithHeadings, WithStyle
             'I' => 10,  // Waktu
             'J' => 10,  // Selesai
             'K' => 30,  // Link Spreadsheet
+            'L' => 30,  // Kartu Bimbingan
+            'M' => 30,  // Kehadiran Seminar
+            'N' => 30,  // Turnitin
+            'O' => 30,  // Pendaftaran Seminar
+            'P' => 30,  // Draf Proposal
+            'Q' => 10,  // Nilai
         ];
     }
 }

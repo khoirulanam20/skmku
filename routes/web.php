@@ -2,12 +2,14 @@
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
+    AdminUpdateProfilController,
     DashboardDosenController,
     DashboardMahasiswaController,
     LoginController,
     DashboardSuperadminController,
     DosenPageSemproController,
     DosenPageSkripsiController,
+    DosenUpdateProfilController,
     MasterDosenController,
     MasterKategoriSkpiController,
     MasterLinkController,
@@ -29,7 +31,8 @@ use App\Http\Controllers\{
     VerifSkpiController,
     VerifSkripsiController,
     VerifSkripsiJurnalController,
-    VerifSuratController
+    VerifSuratController,
+    MahasiswaUpdateProfilController
 };
 use App\Models\MasterKategoriSkpi;
 use App\Models\PendaftaransSkripsiJurnal;
@@ -116,6 +119,8 @@ Route::group(['middleware' => ['role:admin']], function () {
     Route::put('/master-skor/update/{id}', [MasterSkorsSkpiController::class, 'update'])->name('skor.update');
     Route::delete('/master-skor/delete/{id}', [MasterSkorsSkpiController::class, 'destroy'])->name('skor.destroy');
 
+    Route::get('/profil-admin', [AdminUpdateProfilController::class, 'index'])->name('profiladmin.index');
+    Route::put('/profil-admin/{id}', [AdminUpdateProfilController::class, 'update'])->name('profiladmin.update');
 
     // VERIFICATION
     Route::get('/verification-sempro', [VerifSemproController::class, 'index'])->name('verifsempro.index');
@@ -184,10 +189,15 @@ Route::get('/pendaftaransurat/suratpenelitian_nonpayung/{id}', [PendaftaranSurat
 Route::get('/pendaftaransurat/suratpendahuluan_payung/{id}', [PendaftaranSuratController::class, 'suratpendahuluan_payung'])->name('downloadsurat.suratpendahuluan_payung');
 Route::get('/pendaftaransurat/suratpenelitian_payung/{id}', [PendaftaranSuratController::class, 'suratpenelitian_payung'])->name('downloadsurat.suratpenelitian_payung');
 
+Route::get('/profil-mahasiswa', [MahasiswaUpdateProfilController::class, 'index'])->name('profilmahasiswa.index');
+Route::put('/profil-mahasiswa/{id}', [MahasiswaUpdateProfilController::class, 'update'])->name('profilmahasiswa.update');
 // MAHASISWA
 
 // DOSEN
 Route::get('/datasempro', [DosenPageSemproController::class, 'index'])->name('datasempro.dosen');
 Route::get('/dataskripsi', [DosenPageSkripsiController::class, 'index'])->name('dataskripsi.dosen');
 
+Route::get('/profil-dosen', [DosenUpdateProfilController::class, 'index'])->name('profildosen.index');
+Route::put('/profil-dosen/{id}', [DosenUpdateProfilController::class, 'update'])->name('profildosen.update');
 // DOSEN
+

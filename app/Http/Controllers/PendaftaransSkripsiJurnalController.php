@@ -77,6 +77,7 @@ class PendaftaransSkripsiJurnalController extends Controller
             'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
+            'nilai' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
             'ketua_penguji_id' => 'required|exists:master_dosens,user_id',
             'penguji_id' => 'required|exists:master_dosens,user_id',
@@ -143,6 +144,7 @@ class PendaftaransSkripsiJurnalController extends Controller
         $pendaftaranSkripsiJurnal->selesai = $request->selesai;
         $pendaftaranSkripsiJurnal->link_spredsheet = $request->link_spredsheet;
         $pendaftaranSkripsiJurnal->komentar = $request->komentar;
+        $pendaftaranSkripsiJurnal->nilai = $request->nilai;
         $pendaftaranSkripsiJurnal->status = 'pending'; // Default to pending
 
         // Save to database
@@ -198,6 +200,7 @@ class PendaftaransSkripsiJurnalController extends Controller
             'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
+            'nilai' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
             'ketua_penguji_id' => 'required|exists:master_dosens,user_id',
             'penguji_id' => 'required|exists:master_dosens,user_id',
@@ -253,6 +256,7 @@ class PendaftaransSkripsiJurnalController extends Controller
             'selesai' => $request->selesai,
             'link_spredsheet' => $request->link_spredsheet,
             'komentar' => $request->komentar,
+            'nilai' => $request->nilai,
             'status' => 'pending',
         ]);
 

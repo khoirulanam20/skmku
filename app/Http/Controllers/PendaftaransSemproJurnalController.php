@@ -65,6 +65,7 @@ class PendaftaransSemproJurnalController extends Controller
             'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
+            'nilai' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
             'advisor_id' => 'required|exists:master_dosens,user_id',
             'penguji_id' => 'required|exists:master_dosens,user_id',
@@ -109,6 +110,7 @@ class PendaftaransSemproJurnalController extends Controller
         $pendaftaranSemproJurnal->selesai = $request->selesai;
         $pendaftaranSemproJurnal->link_spredsheet = $request->link_spredsheet;
         $pendaftaranSemproJurnal->komentar = $request->komentar;
+        $pendaftaranSemproJurnal->nilai = $request->nilai;
         $pendaftaranSemproJurnal->status = 'pending'; // Default to pending
 
         // Save to database
@@ -152,6 +154,7 @@ class PendaftaransSemproJurnalController extends Controller
             'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
+            'nilai' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
             'advisor_id' => 'required|exists:master_dosens,user_id',
             'penguji_id' => 'required|exists:master_dosens,user_id',
@@ -199,6 +202,7 @@ class PendaftaransSemproJurnalController extends Controller
             'selesai' => $request->selesai,
             'link_spredsheet' => $request->link_spredsheet,
             'komentar' => $request->komentar,
+            'nilai' => $request->nilai,
             'status' => 'pending',
         ]);
 

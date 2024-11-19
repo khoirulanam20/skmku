@@ -47,7 +47,7 @@ class VerifSkripsiController extends Controller
             'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
-           
+            'nilai' => 'nullable',
         ]);
 
         $pendaftaranSkripsi = PendaftaranSkripsi::findOrFail($id);
@@ -63,6 +63,7 @@ class VerifSkripsiController extends Controller
             'selesai' => $request->selesai,
             'link_spredsheet' => $request->link_spredsheet,
             'komentar' => $request->komentar,
+            'nilai' => $request->nilai,
         ]);
 
         // Success alert

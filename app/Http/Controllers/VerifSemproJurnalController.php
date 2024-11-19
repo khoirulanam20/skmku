@@ -50,7 +50,7 @@ class VerifSemproJurnalController extends Controller
             'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
-
+            'nilai' => 'nullable',
         ]);
 
         $pendaftaranSemproJurnal = PendaftaransSemproJurnal::findOrFail($id);
@@ -66,6 +66,7 @@ class VerifSemproJurnalController extends Controller
             'selesai' => $request->selesai,
             'link_spredsheet' => $request->link_spredsheet,
             'komentar' => $request->komentar,
+            'nilai' => $request->nilai,
         ]);
 
         // Success alert

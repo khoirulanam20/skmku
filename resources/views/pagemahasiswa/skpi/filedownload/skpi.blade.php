@@ -87,7 +87,7 @@
                     Full Name
                 </h5>
                 <h5 style="font-style: italic;">
-                    {{ $mahasiswa->nama }}
+                    {{ $pendaftaranskpi->mahasiswa->nama }}
                 </h5>
 
                 <h5 style="font-weight: 600;" class="mt-3">
@@ -107,7 +107,7 @@
                     Student Identification Number
                 </h5>
                 <h5 style="font-style: italic;">
-                    {{ $mahasiswa->nim }}
+                    {{ $pendaftaranskpi->mahasiswa->nim }}
                 </h5>
             </div>
             <div class="col-6 mt-3">
@@ -317,15 +317,22 @@
                 <h5 style="font-weight: 600;">
                     B. AKTIVITAS, PRESTASI DAN PENGHARGAAN
                 </h5>
-                @foreach ($skors_non_translate as $index => $skor)
+                @php
+                    $groupedActivities = collect($skors_non_translate)->groupBy('nama_kategori');
+                @endphp
+                
+                @foreach ($groupedActivities as $kategori => $activities)
                     <h5 style="font-weight: 600; font-style: italic;" class="mt-3">
-                        {{ $skor['nama_kategori'] ?? 'N/A' }}
+                        {{ $kategori ?? 'N/A' }}
                     </h5>
                     <ul>
-                        <li>
-                            <h5 style="font-weight: 600;">
-                                {{ $skor['judul_kegiatan'] ?? 'Null' }}
-                        </li>
+                        @foreach ($activities as $activity)
+                            <li>
+                                <h5 style="font-weight: 600;">
+                                    {{ $activity['judul_kegiatan'] ?? 'Null' }}
+                                </h5>
+                            </li>
+                        @endforeach
                     </ul>
                 @endforeach
             </div>
@@ -334,21 +341,25 @@
                 <h5 style="font-weight: 600;">
                     B. Activities, Achievements and Awards
                 </h5>
+                
+                @php
+                    $groupedTranslatedActivities = collect($skors_translate)->groupBy('nama_kategori_translate');
+                @endphp
 
-                @foreach ($skors_translate as $index => $skor)
+                @foreach ($groupedTranslatedActivities as $kategori => $activities)
                     <h5 style="font-weight: 600; font-style: italic;" class="mt-3">
-                        {{ $skor['nama_kategori_translate'] ?? 'N/A' }}
+                        {{ $kategori ?? 'N/A' }}
                     </h5>
                     <ul>
-                        <li>
-                            <h5 style="font-weight: 600;">
-                                {{ $skor['judul_kegiatan_translate'] ?? 'Null' }},
-                            
-                            </h5>
-                        </li>
+                        @foreach ($activities as $activity)
+                            <li>
+                                <h5 style="font-weight: 600;">
+                                    {{ $activity['judul_kegiatan_translate'] ?? 'Null' }}
+                                </h5>
+                            </li>
+                        @endforeach
                     </ul>
                 @endforeach
-
             </div>
 
             <div class="col-6 mt-5">

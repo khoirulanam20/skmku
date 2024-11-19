@@ -86,6 +86,10 @@
                                             @else
                                                 <span class="badge bg-secondary">Unknown Status</span>
                                             @endif
+                                            <br class="mt-4">
+                                            @if ($p->status === 'diterima')
+                                            <a href="{{ route('downloadskpi.skpi', $p->id) }}" target="_blank">SURAT KETERANGAN PENDAMPING IJAZAH</a><br>
+                                        @endif
                                         </td>
                                         <td>
                                             <a href="{{ route('verifskpi.detail', $p->id) }}"

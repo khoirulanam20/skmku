@@ -138,6 +138,11 @@
                                 <div id="form-diterima" class="row mt-3">
                                     <!-- Tempat and Tanggal -->
                                     <div class="col-md-6 mb-3">
+                                        <label for="nilai" class="form-label">Nilai</label>
+                                        <input type="number" class="form-control" id="nilai" name="nilai" 
+                                            value="{{ $pendaftaransemprojurnal->nilai }}" placeholder="Nilai">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
                                         <label for="tempat" class="form-label">Tempat</label>
                                         <input type="text" class="form-control" id="tempat" name="tempat" 
                                             value="{{ $pendaftaransemprojurnal->tempat }}" placeholder="Tempat">

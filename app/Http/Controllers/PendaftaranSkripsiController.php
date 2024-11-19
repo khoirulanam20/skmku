@@ -73,6 +73,7 @@ class PendaftaranSkripsiController extends Controller
             'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
+            'nilai' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
             'ketua_penguji_id' => 'required|exists:master_dosens,user_id',
             'penguji_id' => 'required|exists:master_dosens,user_id',
@@ -133,6 +134,7 @@ class PendaftaranSkripsiController extends Controller
         $pendaftaranSkripsi->selesai = $request->selesai;
         $pendaftaranSkripsi->link_spredsheet = $request->link_spredsheet;
         $pendaftaranSkripsi->komentar = $request->komentar;
+        $pendaftaranSkripsi->nilai = $request->nilai;
         $pendaftaranSkripsi->status = 'pending'; // Default to pending
 
         // Save to database
@@ -185,6 +187,7 @@ class PendaftaranSkripsiController extends Controller
             'selesai' => 'nullable',
             'link_spredsheet' => 'nullable',
             'komentar' => 'nullable',
+            'nilai' => 'nullable',
             'pembimbing_id' => 'required|exists:master_dosens,user_id',
             'ketua_penguji_id' => 'required|exists:master_dosens,user_id',
             'penguji_id' => 'required|exists:master_dosens,user_id',
@@ -237,6 +240,7 @@ class PendaftaranSkripsiController extends Controller
             'selesai' => $request->selesai,
             'link_spredsheet' => $request->link_spredsheet,
             'komentar' => $request->komentar,
+            'nilai' => $request->nilai,
             'status' => 'pending',
         ]);
 

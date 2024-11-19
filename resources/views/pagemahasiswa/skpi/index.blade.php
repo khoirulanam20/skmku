@@ -30,7 +30,11 @@
                                     <th>Kegiatan</th>
                                     <th>Total Skors</th>
                                     <th>Status</th>
+                                    @foreach ($pendaftaranSkpis as $index => $p)
+                                    @if ($p->status !== 'diterima')
                                     <th>Aksi</th>
+                                    @endif
+                                    @endforeach
                                 </tr>
                             </thead>
                             <tbody>
@@ -69,6 +73,7 @@
                                         <td class="text-center"><h1>{{ $totalSkor }}</h1></td> <!-- Total Skors Column -->
                             
                                         {{-- Display Status --}}
+                                        
                                         <td>
                                             @if ($p->status == 'pending')
                                                 <span class="badge bg-warning">Pending</span>
@@ -83,6 +88,7 @@
                                         </td>
                             
                                         {{-- Aksi Column --}}
+                                        @if ($p->status !== 'diterima')
                                         <td>
                                             <form action="{{ route('pendaftaranskpi.destroy', $p->id) }}" method="POST" style="display:inline;" class="delete-form">
                                                 @csrf
@@ -91,10 +97,8 @@
                                                     <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
                                                 @endif
                                             </form>
-                                            @if ($p->status === 'diterima')
-                                                <a href="{{ route('downloadskpi.skpi', $p->id) }}" target="_blank">SURAT KETERANGAN PENDAMPING IJAZAH</a><br>
-                                            @endif
                                         </td>
+                                        @endif
                             
                                         <td>
                                             @if ($p->dokumen_kegiatan)
@@ -113,7 +117,11 @@
                                     <th>Kegiatan</th>
                                     <th>Total Skors</th>
                                     <th>Status</th>
+                                    @foreach ($pendaftaranSkpis as $index => $p)
+                                    @if ($p->status !== 'diterima')
                                     <th>Aksi</th>
+                                    @endif
+                                    @endforeach
                                 </tr>
                             </tfoot>
                         </table>
