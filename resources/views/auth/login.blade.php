@@ -45,10 +45,11 @@
                         <img src="{{ asset('env') }}/logoskmku.jpg" width="250" alt="Logo SkripsiKU"
                             class="img-fluid">
                         <p class="mt-3">
-                            Selamat datang di <strong>SKMKU</strong>, sistem informasi yang dirancang untuk
-                            memudahkan pengelolaan skripsi bagi mahasiswa dan dosen.
-                            Platform ini merupakan bagian dari layanan unggulan Universitas Dian Nuswantoro (UDINUS)
-                            untuk mendukung proses akademik secara modern dan efisien.
+                            Selamat datang di <strong>SKMKU</strong>, Skripsi dan SKPI Sarjana Kesehatan Masyarakat
+                            Kampus UDINUS merupakan sistem informasi yang dirancang untuk memudahkan pengelolaan skripsi
+                            dan SKPI di Program Studi Sarjana Kesehatan Masyarakat. Platform ini merupakan bagian dari
+                            layanan unggulan Universitas Dian Nuswantoro (UDINUS) untuk mendukung proses akademik secara
+                            modern dan efisien.
                         </p>
                     </div>
 
